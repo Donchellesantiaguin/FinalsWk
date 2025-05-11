@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color What and Where Flashcard Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Pop Up Validation (like clothing brands code) -->
+  <div id="startupModal" class="modal">
+    <div class="modal-content">
+      <h2>👋 Welcome!</h2>
+      <p>Please enter your name and color vision type to begin:</p>
+
+      <label for="firstName">First Name <span class="required">*</span></label>
+      <input type="text" id="firstName" placeholder="First name" />
+
+      <label for="lastName">Last Name <span class="required">*</span></label>
+      <input type="text" id="lastName" placeholder="Last name" />
+
+      <label for="startupVisionSelect">
+        Vision Type <span class="required">*</span>
+      </label>
+      <select id="startupVisionSelect">
+        <option value="" disabled selected>-- Select Mode --</option>
+        <option value="normal">Normal</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="tritanopia">Tritanopia</option>
+      </select>
+
+      <p id="errorMessage" class="hidden">All fields are required to start the game.</p>
+      <button id="startGameBtn">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Game Content -->
+  <div class="game-header">
+    <h1>Color What and Where Flashcard Game</h1>
+    <div id="scoreboard">
+      <span>Score: </span><span id="score">0</span>
+    </div>
+  </div>
+
+  <div class="mode-toggle">
+    <label for="visionMode">👁️ Color Vision Mode:</label>
+    <select id="visionMode">
+      <option value="normal">Normal</option>
+      <option value="protanopia">Protanopia</option>
+      <option value="deuteranopia">Deuteranopia</option>
+      <option value="tritanopia">Tritanopia</option>
+    </select>
+  </div>
+
+  <div class="game-board" id="gameBoard"></div>
+
+  <div id="winMessage" class="hidden">
+    🎉 You matched all the Poppi cans! #SodasBack
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
